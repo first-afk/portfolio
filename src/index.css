@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Modern Negra";
+  src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
+}
+
+@theme {
+  --color-yellow: #e7d393;
+  --color-white-100: #efefef;
+  --font-sans: "Mona Sans", sans-serif;
+  --font-modern-negra: "Modern Negra", sans-serif;
+  --font-serif: "DM Serif Text", serif;
+}
+
+html,
+body {
+  max-width: auto;
+  width: 100%;
+  background-color: black;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility text-gradient {
+  background: linear-gradient(to bottom, #5a9fb5, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility radial-gradient {
+  background: radial-gradient(
+    circle at center,
+    #434343 0%,
+    #000 50%,
+    transparent 100%
+  );
+}
+
+@layer components {
+  nav {
+    @apply fixed z-50 w-full;
+
+    div {
+      @apply flex md:flex-row flex-col md:justify-center items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;
+    }
+
+    p {
+      @apply font-modern-negra text-3xl -mb-2;
+    }
+
+    a {
+      @apply cursor-pointer text-nowrap md:text-base text-sm;
+    }
+
+    ul {
+      @apply flex-center lg:gap-10 gap-7 md:mx-10;
+    }
+  }
+
+  .noisy {
+    @apply relative inset-0 size-full bg-[url("/images/noise.png")];
+  }
+
+  #hero{
+    @apply relative z-10 min-h-dvh w-full border border-transparent;
+    
+    h1{
+      @apply font-modern-negra text-8xl md:text-[10vw] text-center leading-none mt-28 md:mt-40 text-gradient;
+    }
+    h3{
+      @apply font-serif text-4xl md:text-5xl text-center capitalize mt-8 leading-none 
+    }
+    span{
+      @apply text-gray-50/50
+    }
+    p{
+      @apply font-mono text-center font-extralight mt-5 leading-none capitalize;
+    }
+  }
+}
+
