@@ -70,21 +70,80 @@ body {
     @apply relative inset-0 size-full bg-[url("/images/noise.png")];
   }
 
-  #hero{
+  #hero {
     @apply relative z-10 min-h-dvh w-full border border-transparent;
-    
-    h1{
+
+    h1 {
       @apply font-modern-negra text-8xl md:text-[10vw] text-center leading-none mt-28 md:mt-40 text-gradient;
     }
-    h3{
-      @apply font-serif text-4xl md:text-5xl text-center capitalize mt-8 leading-none 
+    h3 {
+      @apply font-serif text-4xl md:text-5xl text-center capitalize mt-8 leading-none;
     }
-    span{
-      @apply text-gray-50/50
+    span {
+      @apply text-gray-50/50;
     }
-    p{
+    p {
       @apply font-mono text-center font-extralight mt-5 leading-none capitalize;
+    }
+  }
+
+  #languages {
+    @apply relative z-10 w-screen border border-transparent py-20 mx-auto px-5 flex flex-col bg-black;
+
+    .content {
+      @apply flex justify-center items-center gap-10 flex-wrap;
+
+      .programming-language {
+        @apply flex flex-col justify-center items-center mb-30 md:mb-[40vh] w-[80vw];
+
+        .content-split {
+          @apply grid md:grid-cols-2 gap-20 justify-center items-center mt-10;
+
+          .img-class {
+            @apply order-2 md:flex justify-center hidden;
+          }
+        }
+
+        h2 {
+          @apply font-modern-negra text-5xl md:text-7xl mb-5;
+        }
+
+        h3 {
+          @apply font-serif text-2xl mb-5;
+        }
+
+        p {
+          @apply text-left mb-10 font-mono;
+        }
+
+        img {
+          @apply w-25 h-25;
+        }
+      }
     }
   }
 }
 
+.logo-container {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 1;
+}
