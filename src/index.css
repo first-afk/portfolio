@@ -1,18 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Modern Negra";
-  src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
 }
 
 @theme {
-  --color-yellow: #e7d393;
-  --color-white-100: #efefef;
-  --font-sans: "Mona Sans", sans-serif;
-  --font-modern-negra: "Modern Negra", sans-serif;
-  --font-serif: "DM Serif Text", serif;
+  --color-primary: #00d1ff;
+  --color-secondary: #00ff94;
+  --color-tertiary: #bd00ff;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
 }
 
 html,
@@ -22,6 +21,7 @@ body {
   background-color: black;
   color: white;
   scroll-behavior: smooth;
+  font-family: var(--font-space-grotesk);
   overflow-x: hidden;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 @utility text-gradient {
-  background: linear-gradient(to bottom, #5a9fb5, #a855f7);
+  background: linear-gradient(to bottom, #cef4fd, #00d1ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -47,103 +47,96 @@ body {
 
 @layer components {
   nav {
-    @apply fixed z-50 w-full;
-
-    div {
-      @apply flex md:flex-row flex-col md:justify-center items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;
-    }
-
-    p {
-      @apply font-modern-negra text-3xl -mb-2;
-    }
-
-    a {
-      @apply cursor-pointer text-nowrap md:text-base text-sm;
-    }
-
-    ul {
-      @apply flex-center lg:gap-10 gap-7 md:mx-10;
+    li {
+      @apply cursor-pointer text-nowrap text-sm;
     }
   }
 
-  .noisy {
-    @apply relative inset-0 size-full bg-[url("/images/noise.png")];
-  }
-
-  #hero {
-    @apply relative z-10 min-h-dvh w-full border border-transparent;
+  .hero {
+    @apply relative container min-h-full w-full mt-15 flex flex-col justify-start md:px-10 px-5 py-10;
 
     h1 {
-      @apply font-modern-negra text-8xl md:text-[10vw] text-center leading-none mt-28 md:mt-40 text-gradient;
+      @apply text-lg text-gradient font-semibold;
     }
-    h3 {
-      @apply font-serif text-4xl md:text-5xl text-center capitalize mt-8 leading-none;
-    }
-    span {
-      @apply text-gray-50/50;
+    h2 {
+      @apply text-5xl md:text-[8vw] uppercase mt-2 leading-11 md:leading-18 font-bold;
     }
     p {
-      @apply font-mono text-center font-extralight mt-5 leading-none capitalize;
+      @apply mt-5 leading-normal text-sm md:w-1/2 mb-10;
     }
   }
 
   #languages {
-    @apply relative z-10 w-screen border border-transparent py-20 mx-auto px-5 flex flex-col bg-black;
-
-    .content {
-      @apply flex justify-center items-center gap-10 flex-wrap;
-
-      .programming-language {
-        @apply flex flex-col justify-center items-center mb-30 md:mb-[40vh] w-[80vw];
-
-        .content-split {
-          @apply grid md:grid-cols-2 gap-20 justify-center items-center mt-10;
-
-          .img-class {
-            @apply order-2 md:flex justify-center hidden;
-          }
-        }
-
-        h2 {
-          @apply font-modern-negra text-5xl md:text-7xl mb-5;
-        }
-
-        h3 {
-          @apply font-serif text-2xl mb-5;
-        }
-
-        p {
-          @apply text-left mb-10 font-mono;
-        }
-
-        img {
-          @apply w-25 h-25;
-        }
+    @apply relative py-10 px-5;
+    .language-card {
+      display: grid;
+      grid-template-areas:
+        "languages frameworks"
+        "web web"
+        "backend backend";
+      grid-template-columns: 1.5fr 3fr;
+      grid-template-rows: auto auto auto;
+      gap: 1em;
+      @media screen and (max-width: 768px) {
+        grid-template-areas:
+          "languages"
+          "frameworks"
+          "web"
+          "backend";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
       }
     }
+    .language-card .languages {
+      grid-area: languages;
+    }
+    .language-card .frameworks {
+      grid-area: frameworks;
+    }
+    .language-card .web {
+      grid-area: web;
+    }
+    .language-card .backend {
+      grid-area: backend;
+    }
+    .frameworks-ecosystem {
+      @apply bg-neutral-950 rounded-md p-2;
+    }
+    p {
+      @apply text-xs;
+    }
+    h1 {
+      @apply text-sm font-semibold;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-areas: "p-text icon-grid";
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+    .card-grid .p-text {
+      grid-area: p-text;
+    }
+    .card-grid .icon-grid {
+      grid-area: icon-grid;
+      margin-top: -70px;
+      display: grid;
+      background-color: var(--color-tertiary);
+      grid-template-areas: "express node" "mysql mysql";
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+    }
+    .icon-grid .express{
+      grid-area: express;
+      @apply bg-neutral-950;
+    }
+    .icon-grid .nodejs{
+      grid-area: node;
+      @apply bg-neutral-950;
+    }
+    .icon-grid .mysql{
+      grid-area: mysql;
+      @apply bg-neutral-950;
+    }
   }
-}
-
-.logo-container {
-  position: fixed;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 150px;
-  height: 150px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.logo-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  opacity: 1;
 }

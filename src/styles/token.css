@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');;
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
+}
+
+:root{
+  --font-body: "Space Grotesk", sans-serif;
+
+  --color-primary-blue: #00D1FF;
+  --color-text-secondary: #E2E2E2;
+  --color-secondary: #BD00FF;
+  --color-tertiary: #00FF94;
+  --color-neutral: #000000;
+
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Border Radius */
+  --radius-default: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Font Weights */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  /* Font Size */
+  --fs-h1: 2.25rem;
+  --fs-h2: 1.875rem;
+  --fs-h3: 1.25rem;
+  --fs-h4: 0.875rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body-reg: 1rem;
+  --fs-body-sm: 0.87rem;
+  --fs-label: 0.67rem;
+
+  /* Line Heights */
+  --line-tight: 1.2;
+  --line-normal: 1.5;
+  --line-relaxed: 1.625;
+}
+
+:root,
+[data-theme="light"] {
+  --color-bg: #f8f6f6;
+  --color-text-primary: #181113;
+  --color-border: #e6dbdf;
+  
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-text-primary: #ffffff;
+  --color-border: #3d212a;
+}
+
