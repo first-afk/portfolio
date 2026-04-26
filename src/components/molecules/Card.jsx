@@ -8,6 +8,7 @@ const Card = ({
   padding = "normal",
   color = "secondary",
   height = "normal",
+  rounded = 'md'
 }) => {
   const paddings = {
     none: "",
@@ -21,15 +22,22 @@ const Card = ({
     small: "h-32",
     normal: "h-48",
     large: "h-64",
+    xlarge: 'h-96'
   };
+  const edges ={
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    xl: 'rounded-4xl',
+    xxl: 'rounded-[20px]'
+  }
   return (
     <>
       <div className="relative">
         <div
-          className={`absolute -inset-0.5 bg-${color} opacity-50 blur-sm rounded-md`}
+          className={`absolute -inset-0.5 bg-${color} opacity-50 blur-sm ${edges[rounded]}`}
         ></div>
         <div
-          className={`relative bg-neutral-900 border border-${color} rounded-md ${className} ${heights[height]}`}
+          className={`relative bg-neutral-900 border border-${color} ${className} ${edges[rounded]} ${heights[height]}`}
         >
           {(title || subtitle) && (
             <div className={paddings[padding]}>
@@ -37,7 +45,7 @@ const Card = ({
                 <p className={`text-xs text-${color} capitalize`}>{title}</p>
               )}
               {subtitle && (
-                <p className="text-2xl font-semibold text-gray-300 capitalize">
+                <p className="text-2xl font-semibold text-gray-300 capitalize w-[12em] md:w-full">
                   {subtitle}
                 </p>
               )}

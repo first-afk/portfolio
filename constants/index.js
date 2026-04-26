@@ -4,7 +4,7 @@ const navLinks = [
     title: "Home",
   },
   {
-    id: "showcase",
+    id: "showroom",
     title: "Showcase",
   },
   {

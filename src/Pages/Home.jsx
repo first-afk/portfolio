@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Button from "../components/atoms/Button";
 import Card from "../components/molecules/Card";
 import Icons from "../components/atoms/Icons";
+import Footer from "../components/organisms/Footer";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -68,7 +69,7 @@ const Home = () => {
       <section id="languages" className="body">
         <div className="language-card ">
           <div className="mt-2 languages">
-            <Card title="languages" subtitle="Core logic" color="primary">
+            <Card height="large" title="languages" subtitle="Core logic" color="primary">
               <div className="flex justify-between">
                 <div className="flex-center">
                   <Icons name="js" size={24} color="#00d1ff" />
@@ -85,16 +86,16 @@ const Home = () => {
               title="frameworks"
               subtitle="the reactive ecosystem"
               color="secondary"
-              padding=""
-              className="p-4 h-full md:h-48"
+              padding="normal"
+              height="large"
             >
-              <div className="grid grid-cols-2 gap-3 mt-5">
+              <div className="grid grid-cols-2 gap-3 ">
                 <div className="frameworks-ecosystem">
                   <div className="flex items-center gap-2">
                     <Icons name="react" color="#bd00ff" size="18px"></Icons>
                     <h1>React</h1>
                   </div>
-                  <p className="mt-3">
+                  <p className="mt-3 text-sm">
                     Building complex, modular component architectures with
                     optimized state cycles
                   </p>
@@ -104,7 +105,7 @@ const Home = () => {
                     <Icons name="react" color="#bd00ff" size="18px"></Icons>
                     <h1>React</h1>
                   </div>
-                  <p className="mt-3">
+                  <p className="mt-3 text-sm">
                     Building complex, modular component architectures with
                     optimized state cycles
                   </p>
@@ -117,7 +118,7 @@ const Home = () => {
               title="web standard"
               subtitle="interface mastery"
               color=""
-              className="md:h-24 h-32"
+              className="md:h-24 h-full"
             >
               <div className="flex justify-end md:-mt-22 space-x-4">
                 <Button
@@ -152,7 +153,8 @@ const Home = () => {
               title="backend & db"
               subtitle="persistent infrastructure"
               color="tertiary"
-              padding="small"
+              padding="normal"
+              height="large"
             >
               <div className="card-grid">
                 <div className="p-text">
@@ -162,14 +164,17 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="icon-grid ">
-                  <div className="flex items-center justify-center express">
-                    <Icons size='50px' name="express" color="#00ff94"></Icons>
+                  <div className="flex flex-col items-center justify-center express">
+                    <Icons size="2em" name="express" color="#00ff94"></Icons>
+                    <h1>Express</h1>
                   </div>
-                  <div className="flex items-center justify-center nodejs">
-                    <Icons size='50px' name="nodejs" color="#00ff94"></Icons>
+                  <div className="flex flex-col items-center justify-center nodejs">
+                    <Icons size="2em" name="nodejs" color="#00ff94"></Icons>
+                    <h1>node.js</h1>
                   </div>
-                  <div className="flex items-center justify-center mysql">
-                    <Icons size='50px' name="mysql" color="#00ff94"></Icons>
+                  <div className="flex flex-col items-center justify-center mysql">
+                    <Icons size="2em" name="mysql" color="#00ff94"></Icons>
+                    <h1>MySQL</h1>
                   </div>
                 </div>
               </div>
