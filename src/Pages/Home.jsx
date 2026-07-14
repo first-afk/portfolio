@@ -69,14 +69,19 @@ const Home = () => {
       <section id="languages" className="body">
         <div className="language-card ">
           <div className="mt-2 languages">
-            <Card height="large" title="languages" subtitle="Core logic" color="primary">
+            <Card
+              height="large"
+              title="languages"
+              subtitle="Core logic"
+              color="primary"
+            >
               <div className="flex justify-between">
                 <div className="flex-center">
                   <Icons name="js" size={24} color="#00d1ff" />
-                  <p>Javascript</p>
+                  <p className="text-lg">Javascript</p>
                 </div>
                 <div>
-                  <p>ESNEXT</p>
+                  <p className="text-lg">ESNEXT</p>
                 </div>
               </div>
             </Card>
@@ -89,27 +94,19 @@ const Home = () => {
               padding="normal"
               height="large"
             >
-              <div className="grid grid-cols-2 gap-3 ">
-                <div className="frameworks-ecosystem">
-                  <div className="flex items-center gap-2">
-                    <Icons name="react" color="#bd00ff" size="18px"></Icons>
-                    <h1>React</h1>
-                  </div>
-                  <p className="mt-3 text-sm">
-                    Building complex, modular component architectures with
-                    optimized state cycles
-                  </p>
+              <div className="frameworks-ecosystem">
+                <div className="flex items-center gap-2">
+                  <Icons name="react" color="#bd00ff" size="18px"></Icons>
+                  <h1>React</h1>
                 </div>
-                <div className="frameworks-ecosystem">
-                  <div className="flex items-center gap-2">
-                    <Icons name="react" color="#bd00ff" size="18px"></Icons>
-                    <h1>React</h1>
-                  </div>
-                  <p className="mt-3 text-sm">
-                    Building complex, modular component architectures with
-                    optimized state cycles
-                  </p>
-                </div>
+                <p className="mt-3 text-sm line-clamp-3">
+                  Building complex, modular component architectures with
+                  optimized state cycles. Lorem ipsum dolor, sit amet
+                  consectetur adipisicing elit. Quo unde natus, optio, et omnis
+                  temporibus aliquam cupiditate neque repudiandae vel recusandae
+                  repellendus, eius ut modi fugiat rerum dignissimos dolorem
+                  eos?
+                </p>
               </div>
             </Card>
           </div>

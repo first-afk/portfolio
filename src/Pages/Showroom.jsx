@@ -19,10 +19,11 @@ const Showroom = () => {
         </div>
         <div className="mt-2 description">
           <Card rounded="lg" color height="xlarge">
-            <h1 className="text-6xl font-normal">
-              I'm Orieji <br /> <span className="font-bold">Esther</span>{" "}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight wrap-break-word">
+              I'm Orieji <br />
+              <span className="font-bold block sm:inline">Esther</span>{" "}
             </h1>
-            <p className="py-10 md:py-15 text-xs md:text-sm">
+            <p className="py-2 max-sm:text-sm leading-relaxed wrap-break-word">
               My journey in the world of web development stems from a deep
               fascination with the digital realm. From my early days of
               curiosity to my current expertise, I have honed the craft of
@@ -34,10 +35,10 @@ const Showroom = () => {
           </Card>
         </div>
         <div className="mt-2 links">
-          <Card height="none" padding="none" color className="h-48 md:h-185">
-            <div className="links-logo">
+          <Card height="none" padding="none" color className="h-fit lg:h-185">
+            <div className="links-logo max-md:hidden mx-3">
               <div className="links-icon wrap-break-word flex place-items-center">
-                <h1 className="text-[5vw] font-bold md:leading-14 mx-6 p-2 mt-8">
+                <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold md:leading-14 mx-6 p-2 mt-8 wrap-break-word">
                   LIN KS
                 </h1>
               </div>
@@ -46,45 +47,66 @@ const Showroom = () => {
               <Icons className="links-icon" name="linkedin" size="540"></Icons>
             </div>
 
-            <div className="recent-works mt-15 mx-3 hidden md:block">
-              <h2 className="uppercase font-extrabold text-[5vw] md:leading-13 leading-7 mx-4">
+            <div className="flex items-center flex-col h-47 md:hidden">
+              <div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-4 wrap-break-word">
+                  LINKS
+                </h1>
+              </div>
+              <div className="flex items-center justify-center -mt-2 h-1/2 flex-1 p-2">
+                <div className="flex-1 w-1/3">
+                  <Icons
+                    className="links-icon"
+                    name="github"
+                    size="540"
+                  ></Icons>
+                </div>
+                <div className="flex-1 w-2/3">
+                  {" "}
+                  <Icons
+                    className="links-icon"
+                    name="instagram"
+                    size="540"
+                  ></Icons>
+                </div>
+                <div className="flex-1 w-1/3">
+                  <Icons
+                    className="links-icon"
+                    name="linkedin"
+                    size="540"
+                  ></Icons>
+                </div>
+              </div>
+            </div>
+
+            <div className="recent-works mt-15 mx-3 lg:flex flex-col items-center justify-center">
+              <h2 className="uppercase font-extrabold text-3xl sm:text-4xl lg:text-[5vw] leading-tight md:leading-13 mx-4 wrap-break-word">
                 recent works
               </h2>
 
               <div className="work">
-                <div className="flex items-start justify-between">
-                  <h3>Job Rank</h3>
-                  <h3>date to be posted</h3>
-                </div>
                 <div>
-                  <p>link to be posted</p>
-                </div>
-              </div>
-              <div className="work">
-                <div className="flex items-start justify-between">
-                  <h3>Job Rank</h3>
-                  <h3>date to be posted</h3>
-                </div>
-                <div>
-                  <p>link to be posted</p>
-                </div>
-              </div>
-              <div className="work">
-                <div className="flex items-start justify-between">
-                  <h3>Job Rank</h3>
-                  <h3>date to be posted</h3>
-                </div>
-                <div>
-                  <p>link to be posted</p>
-                </div>
-              </div>
-              <div className="work">
-                <div className="flex items-start justify-between">
-                  <h3>Job Rank</h3>
-                  <h3>date to be posted</h3>
-                </div>
-                <div>
-                  <p>link to be posted</p>
+                  <div className="flex items-start justify-between text-sm gap-3">
+                    <h3>Job Rank</h3>
+                    <h3>Date to be posted</h3>
+                  </div>
+                  <div>
+                    <p>link to be posted</p>
+                  </div>
+                  <div className="flex items-start justify-between text-sm gap-3">
+                    <h3>Job Rank</h3>
+                    <h3>Date to be posted</h3>
+                  </div>
+                  <div>
+                    <p>link to be posted</p>
+                  </div>
+                  <div className="flex items-start justify-between text-sm gap-3">
+                    <h3>Job Rank</h3>
+                    <h3>Date to be posted</h3>
+                  </div>
+                  <div>
+                    <p>link to be posted</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,19 +118,41 @@ const Showroom = () => {
             padding="large"
             className="h-102 md:h-80 border-4 border-fuchsia-600"
           >
-            <h1 className="text-6xl font-bold mb-5">Skills</h1>
-            <div className="grid md:grid-cols-2 items-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 wrap-break-word">
+              Skills
+            </h1>
+            <div className="grid gap-2 sm:grid-cols-2 items-start">
               {programmingLanguages.map((item) => (
-                <p key={item.id}>{item.title}</p>
+                <p
+                  key={item.id}
+                  className="text-sm sm:text-base wrap-break-word"
+                >
+                  {item.title}
+                </p>
               ))}
               {frontendTools.map((item) => (
-                <p key={item.id}>{item.title}</p>
+                <p
+                  key={item.id}
+                  className="text-sm sm:text-base wrap-break-word"
+                >
+                  {item.title}
+                </p>
               ))}
               {backendTools.map((item) => (
-                <p key={item.id}>{item.title}</p>
+                <p
+                  key={item.id}
+                  className="text-sm sm:text-base wrap-break-word"
+                >
+                  {item.title}
+                </p>
               ))}
               {databaseTool.map((item) => (
-                <p key={item.id}>{item.title}</p>
+                <p
+                  key={item.id}
+                  className="text-sm sm:text-base wrap-break-word"
+                >
+                  {item.title}
+                </p>
               ))}
             </div>
           </Card>
