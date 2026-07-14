@@ -54,7 +54,7 @@ const Project = () => {
       <header className="projects-title py-10 flex justify-center max-md:text-5xl text-8xl uppercase font-black">
         Projects
       </header>
-      <div className="flex max-md:flex-col justify-between items-center w-full max-md:space-y-24 gap-10 px-5 py-10">
+      <div className="flex max-md:flex-col justify-between items-center w-full max-md:space-y-24 gap-10 md:px-5 py-10">
         {spotlight.map(({ title, link, description, image }) => (
           <ProjectCard
             title={title}
@@ -65,7 +65,7 @@ const Project = () => {
         ))}
       </div>
 
-      <div className="projects-display py-60 flex flex-col items-center justify-center m-4 ">
+      <div className="projects-display py-60 flex flex-col items-center justify-center m-4">
         {projects.map(({ id, title, link, description, tagline, image2 }) => (
           <div
             key={id}
