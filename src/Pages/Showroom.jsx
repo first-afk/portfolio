@@ -9,6 +9,28 @@ import {
 } from "../../constants";
 
 const Showroom = () => {
+  const projects = [
+    {
+      id: "01",
+      title: "OptoNews",
+      date: "02.september.2025",
+      link: "https://optonews.com.ng/",
+    },
+
+    {
+      id: "02",
+      title: "Skip-Fit",
+      date: "02.september.2025",
+      link: "https://skip-fit.vercel.app/",
+    },
+
+    {
+      id: "03",
+      title: "MX-Directory",
+      date: "02.september.2025",
+      link: "https://mx-directory.vercel.app/",
+    },
+  ];
   return (
     <>
       <section className="showroom mt-20 p-5">
@@ -85,29 +107,19 @@ const Showroom = () => {
               </h2>
 
               <div className="work">
-                <div>
-                  <div className="flex items-start justify-between text-sm gap-3">
-                    <h3>Job Rank</h3>
-                    <h3>Date to be posted</h3>
+                {projects.map(({ title, link, date }) => (
+                  <div className="flex flex-col mt-2">
+                    <div className="flex items-center justify-between text-sm gap-3">
+                      <h3 className="text-lg">{title}</h3>
+                      <h3 className="text-md">{date}</h3>
+                    </div>
+                    <div>
+                      <a className="text-sm" href={link}>
+                        View live
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <p>link to be posted</p>
-                  </div>
-                  <div className="flex items-start justify-between text-sm gap-3">
-                    <h3>Job Rank</h3>
-                    <h3>Date to be posted</h3>
-                  </div>
-                  <div>
-                    <p>link to be posted</p>
-                  </div>
-                  <div className="flex items-start justify-between text-sm gap-3">
-                    <h3>Job Rank</h3>
-                    <h3>Date to be posted</h3>
-                  </div>
-                  <div>
-                    <p>link to be posted</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </Card>

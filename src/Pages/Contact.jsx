@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../components/atoms/Button";
 
 const Contact = () => {
-  const recipientEmail = "estherorieji@gmail.com";
+  const recipientEmail = "estherrorieji@gmail.com";
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -98,7 +98,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Write your idea in markdown or plain text. Example: ## Launch plan\n- goals\n- timeline\n- references"
+                  placeholder="Write your idea."
                   rows={8}
                   required
                 />
