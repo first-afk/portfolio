@@ -50,7 +50,7 @@ const Project = () => {
   ];
   const spotlight = projects.slice(0, 3);
   return (
-    <section className="projects mt-20 p-5 mx-auto">
+    <section className="projects mt-20 mx-auto">
       <header className="projects-title py-10 flex justify-center max-md:text-5xl text-8xl uppercase font-black">
         Projects
       </header>
@@ -65,7 +65,7 @@ const Project = () => {
         ))}
       </div>
 
-      <div className="projects-display py-60 flex flex-col items-center justify-center m-4">
+      <div className="projects-display py-60 flex flex-col items-center justify-center p-4">
         {projects.map(({ id, title, link, description, tagline, image2 }) => (
           <div
             key={id}
